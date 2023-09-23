@@ -36,19 +36,19 @@ export class CreateContract1695454538834 implements MigrationInterface {
               isNullable: false,
             },
             {
-              name: 'created_at',
+              name: 'createdAt',
               type: 'timestamp',
               default: 'now()',
               isNullable: false,
             },
             {
-              name: 'updated_at',
+              name: 'updatedAt',
               type: 'timestamp',
               default: 'now()',
               isNullable: false,
             },
             {
-              name: 'deleted_at',
+              name: 'deletedAt',
               type: 'timestamp',
               isNullable: true,
             },

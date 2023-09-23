@@ -2,6 +2,7 @@ import 'dotenv/config'; // Import and configure dotenv
 import express, { Application, NextFunction, Request, Response } from 'express';
 import { errorHandler } from './middlewares/error-handler';
 import helmet from 'helmet';
+import { router } from './routes/contract.route';
 
 class App {
   public express: Application = express();
@@ -65,8 +66,17 @@ class App {
       next();
     });
 
+    // health check
+    this.express.use('/health', (_req, res) => {
+      res.send({ message: 'Application running successfully!' });
+    });
+
+    this.express.use('/api/contract', router);
+
     // Handle 404
     this.express.use((req, res) => {
+      console.log('hello');
+
       res.status(404).json({
         success: false,
         message: 'Not Found.',
