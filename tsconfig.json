@@ -19,7 +19,9 @@
     "typeRoots": ["./types.ts", "./node_modules/@types"],
     "stripInternal": true,
     "noImplicitAny": false,
-    "preserveConstEnums": true
+    "preserveConstEnums": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true
   },
   "include": ["src/**/*"]
 }
