@@ -8,6 +8,7 @@ import {
   Timestamp,
   UpdateDateColumn,
 } from 'typeorm';
+import { LinkPrecedenceEnum } from '../enums/contract.enum';
 
 @Entity('contract')
 export class Contract extends BaseEntity {
@@ -23,15 +24,15 @@ export class Contract extends BaseEntity {
   @Column({ type: 'varchar' })
   linkedId: string;
 
-  @Column({ type: 'varchar' })
-  linkPrecedence: string;
+  @Column({ type: 'enum', enum: LinkPrecedenceEnum })
+  linkPrecedence: LinkPrecedenceEnum;
 
-  @CreateDateColumn({ name: 'created_at', nullable: false })
-  created_at: Timestamp;
+  @CreateDateColumn({ name: 'createdAt', nullable: false })
+  createdAt: Timestamp;
 
-  @UpdateDateColumn({ name: 'updated_at', nullable: false })
-  updated_at: Timestamp;
+  @UpdateDateColumn({ name: 'updatedAt', nullable: false })
+  updatedAt: Timestamp;
 
-  @DeleteDateColumn({ name: 'deleted_at' })
-  deleted_at: Timestamp;
+  @DeleteDateColumn({ name: 'deletedAt' })
+  deletedAt: Timestamp;
 }
