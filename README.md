@@ -113,3 +113,8 @@ Request body
 ## Using the API
 
 You can use any API testing tool like Postman or curl to interact with the API.
+or you can test it on
+
+```diff
+    https://identity-reconciliation-8buw.onrender.com/api/contract/identify
+```
